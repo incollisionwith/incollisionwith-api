@@ -1,0 +1,30 @@
+- id: 1
+  label: fatal
+  comment: An accident in which at least one person is killed.
+- id: 2
+  label: serious
+  comment: An accient in which at least one person is seriously injured but no person (other than a confirmed suicide) is killed.
+  injury_definition: |
+    <p>An injury for which a person is detained in hospital as an “in-patient”, or
+       any of the following injuries whether or not they are detained in hospital:</p>
+    <ul>
+      <li>fractures,</li>
+      <li>concussion,</li>
+      <li>internal injuries,</li>
+      <li>crushings,</li>
+      <li>burns (excluding friction burns),</li>
+      <li>severe cuts,<li>
+      <li>severe general shock requiring medical treatment,</li>
+      <li>injuries causing death 30 or more days after the accident.</li>
+    </ul>
+    <p>An injured casualty is recorded as seriously or slightly injured by the police on the basis of information
+       available within a short time of the accident. This generally will not reflect the results of a medical
+       examination, but may be influenced according to whether the casualty is hospitalised or not. Hospitalisation
+       procedures will vary regionally.</p>
+- id: 3
+  label: slight
+  comment: An accident in which at least one person is slightly injured but no person is killed or seriously injured.
+  injury_definition: |
+    <p>An injury of a minor character such as a sprain (including neck whiplash
+       injury), bruise or cut which are not judged to be severe, or slight shock requiring
+       roadside attention. This definition includes injuries not requiring medical treatment.</p>

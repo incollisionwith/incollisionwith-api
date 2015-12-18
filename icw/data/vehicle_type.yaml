@@ -1,0 +1,57 @@
+- id: 1
+  label: Pedal cycle
+  font_awesome: bicycle
+- id: 2
+  label: Motorcycle (50cc and under)
+  font_awesome: motorcycle
+- id: 3
+  label: Motorcycle (125cc and under)
+  font_awesome: motorcycle
+- id: 4
+  label: Motorcycle (over 125cc and up to 500cc)
+  font_awesome: motorcycle
+- id: 5
+  label: Motorcycle (over 500cc)
+  font_awesome: motorcycle
+- id: 8
+  label: Taxi or private hire car
+  font_awesome: taxi
+- id: 9
+  label: Car
+  font_awesome: car
+- id: 10
+  label: Minibus (8–16 passenger seats)
+  font_awesome: bus
+- id: 11
+  label: Bus or coach (17 or more passenger seats)
+  font_awesome: bus
+- id: 16
+  label: Ridden horse
+- id: 17
+  label: Agricultural vehicle
+- id: 18
+  label: Tram
+  font_awesome: subway
+- id: 19
+  label: Van or goods vehicle (3.5t mgw or under)
+  font_awesome: truck
+- id: 20
+  label: Goods vehicle (over 3.5t and under 7.5t)
+  font_awesome: truck
+- id: 21
+  label: Goods vehicle (7.5t mgw and over)
+  font_awesome: truck
+- id: 22
+  label: Mobility scooter
+- id: 23
+  label: Electric motorcycle
+  font_awesome: motorcycle
+- id: 90
+  label: Other vehicle
+  font_awesome: question
+- id: 97
+  label: Motorcycle (unknown cc)
+  font_awesome: motorcycle
+- id: 98
+  label: Goods vehicle (unknown weight)
+  font_awesome: truck

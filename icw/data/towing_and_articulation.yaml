@@ -1,0 +1,12 @@
+- id: 0
+  label: No tow/articulation
+- id: 1
+  label: Articulated vehicle
+- id: 2
+  label: Double or multiple trailer
+- id: 3
+  label: Caravan
+- id: 4
+  label: Single trailer
+- id: 5
+  label: Other tow

@@ -1,6 +1,9 @@
 PyYAML
 SPARQLWrapper
 SQLAlchemy
+GeoAlchemy2
 aiohttp
+astral
 psycopg2
+pytz
 rdflib
