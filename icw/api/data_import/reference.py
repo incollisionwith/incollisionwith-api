@@ -3,8 +3,7 @@ import pkgutil
 
 import yaml
 
-import icw.db
-import icw.db.reference
+from .. import db
 
 def load_generic(app, filename, model):
     session = app['db-session']()
@@ -22,9 +21,9 @@ if __name__ == '__main__':
     from ..app import get_app
     app = get_app()
 
-    for name in dir(icw.db):
-        cls = getattr(icw.db, name)
+    for name in dir(db):
+        cls = getattr(db, name)
         if isinstance(cls, type) and \
-           issubclass(cls, icw.db.reference.ReferenceTable) and \
-           cls is not icw.db.reference.ReferenceTable:
+           issubclass(cls, db.ReferenceTable) and \
+           cls is not db.ReferenceTable:
             load_generic(app, 'data/{}.yaml'.format(cls.__tablename__), cls)

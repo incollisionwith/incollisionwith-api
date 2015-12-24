@@ -4,7 +4,7 @@ import datetime
 from astral import Astral
 import pytz
 
-from icw.db import Accident
+from ..db import Accident
 
 def indexed(row, name):
     value = int(row[name])

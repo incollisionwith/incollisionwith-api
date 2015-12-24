@@ -4,7 +4,7 @@ import rdflib
 import yaml
 from SPARQLWrapper import JSON
 
-from icw.db import PoliceForce
+from ..db import PoliceForce
 
 __all__ = ['load_police_force']
 

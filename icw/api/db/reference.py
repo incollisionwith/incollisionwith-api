@@ -2,7 +2,8 @@ from sqlalchemy import Column, Integer, String
 
 from . import Base
 
-__all__ = ['AgeBand', 'CasualtyClass', 'CasualtySeverity', 'JunctionControl', 'JunctionDetail', 'JunctionLocation',
+__all__ = ['ReferenceTable',
+           'AgeBand', 'CasualtyClass', 'CasualtySeverity', 'JunctionControl', 'JunctionDetail', 'JunctionLocation',
            'PedestrianLocation', 'PedestrianMovement', 'Sex', 'TowingAndArticulation', 'VehicleLocation',
            'VehicleManoeuvre', 'VehicleType']
 

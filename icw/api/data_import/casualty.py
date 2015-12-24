@@ -1,6 +1,6 @@
 import csv
 
-from icw.db import Casualty
+from ..db import Casualty
 
 def indexed(row, name):
     value = int(row[name])

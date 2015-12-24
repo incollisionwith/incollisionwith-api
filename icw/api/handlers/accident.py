@@ -3,7 +3,7 @@ import asyncio
 from aiohttp.web_exceptions import HTTPNotFound
 from aiohttp_utils import Response
 
-from icw.db import Accident
+from ..db import Accident
 from . import BaseHandler
 
 __all__ = ['AccidentDetailHandler']
