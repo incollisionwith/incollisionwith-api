@@ -1,0 +1,22 @@
+- id: 0
+  label: Not a Pedestrian
+- id: 1
+  label: Crossing on pedestrian crossing facility
+- id: 2
+  label: Crossing in zig-zag approach lines
+- id: 3
+  label: Crossing in zig-zag exit lines
+- id: 4
+  label: Crossing elsewhere within 50m. of pedestrian crossing
+- id: 5
+  label: In carriageway, crossing elsewhere
+- id: 6
+  label: On footway or verge
+- id: 7
+  label: On refuge, central island or central reservation
+- id: 8
+  label: In centre of carriageway - not on refuge, island or central reservation
+- id: 9
+  label: In carriageway, not crossing
+- id: 10
+  label: Unknown or other

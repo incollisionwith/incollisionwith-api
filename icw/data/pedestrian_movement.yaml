@@ -1,0 +1,20 @@
+- id: 0
+  label: Not a Pedestrian
+- id: 1
+  label: Crossing from driver's nearside
+- id: 2
+  label: Crossing from nearside - masked by parked or stationary vehicle
+- id: 3
+  label: Crossing from driver's offside
+- id: 4
+  label: Crossing from offside - masked by  parked or stationary vehicle
+- id: 5
+  label: In carriageway, stationary - not crossing  (standing or playing)
+- id: 6
+  label: In carriageway, stationary - not crossing  (standing or playing) - masked by parked or stationary vehicle
+- id: 7
+  label: Walking along in carriageway, facing traffic
+- id: 8
+  label: Walking along in carriageway, back to traffic
+- id: 9
+  label: Unknown or other

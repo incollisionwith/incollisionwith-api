@@ -1,0 +1,18 @@
+- id: 0
+  label: Not at junction or within 20 metres
+- id: 1
+  label: Roundabout
+- id: 2
+  label: Mini-roundabout
+- id: 3
+  label: T or staggered junction
+- id: 5
+  label: Slip road
+- id: 6
+  label: Crossroads
+- id: 7
+  label: More than 4 arms (not roundabout)
+- id: 8
+  label: Private drive or entrance
+- id: 9
+  label: Other junction

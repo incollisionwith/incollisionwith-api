@@ -6,6 +6,11 @@ import pytz
 
 from icw.db import Accident
 
+def indexed(row, name):
+    value = int(row[name])
+    if value != -1:
+        return value
+
 
 def load_accident(app, f):
     reader = csv.DictReader(f)
@@ -40,12 +45,14 @@ def load_accident(app, f):
             accident = Accident(id=row['\ufeffAccident_Index'],
                                 location=location,
                                 police_force_id=row['Police_Force'],
-                                accident_severity_id=row['Accident_Severity'],
+                                severity_id=row['Accident_Severity'],
                                 number_of_vehicles=int(row['Number_of_Vehicles']),
                                 number_of_casualties=int(row['Number_of_Casualties']),
                                 date=date,
                                 date_and_time=date_and_time,
                                 police_attended=row['Did_Police_Officer_Attend_Scene_of_Accident'] == '1',
+                                junction_control_id=indexed(row, 'Junction_Control'),
+                                junction_detail_id=indexed(row, 'Junction_Detail'),
                                 moon_phase=moon_phase,
                                 solar_elevation=solar_elevation)
             session.merge(accident)

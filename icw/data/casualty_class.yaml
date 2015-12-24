@@ -1,0 +1,6 @@
+- id: 1
+  label: driver or rider
+- id: 2
+  label: passenger
+- id: 3
+  label: pedestrian

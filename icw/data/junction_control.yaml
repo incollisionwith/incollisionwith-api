@@ -1,0 +1,10 @@
+- id: 0
+  label: Not at junction or within 20 metres
+- id: 1
+  label: Authorised person
+- id: 2
+  label: Auto traffic signal
+- id: 3
+  label: Stop sign
+- id: 4
+  label: Give way or uncontrolled

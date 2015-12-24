@@ -1,57 +1,81 @@
+- id: 0
+  label: On foot
+  person_label: pedestrian
+  font_awesome: male
 - id: 1
   label: Pedal cycle
+  person_label: cyclist
   font_awesome: bicycle
 - id: 2
   label: Motorcycle (50cc and under)
+  person_label: motorcycle 50cc and under rider or passenger
   font_awesome: motorcycle
 - id: 3
   label: Motorcycle (125cc and under)
+  person_label: motorcycle 125cc and under rider or passenger
   font_awesome: motorcycle
 - id: 4
   label: Motorcycle (over 125cc and up to 500cc)
+  person_label: motorcycle over 125cc and up to 500cc rider or passenger
   font_awesome: motorcycle
 - id: 5
   label: Motorcycle (over 500cc)
+  person_label: motorcycle over 50cc rider or passenger
   font_awesome: motorcycle
 - id: 8
   label: Taxi or private hire car
+  person_label: taxi or private hire car occupant
   font_awesome: taxi
 - id: 9
   label: Car
+  person_label: car occupant
   font_awesome: car
 - id: 10
   label: Minibus (8–16 passenger seats)
+  person_label: minibus (8–16 passenger seats) occupant
   font_awesome: bus
 - id: 11
   label: Bus or coach (17 or more passenger seats)
+  person_label: ibus (17 or more passenger seats) occupant
   font_awesome: bus
 - id: 16
   label: Ridden horse
+  person_label: horse rider
 - id: 17
   label: Agricultural vehicle
+  person_label: agricultural vehicle occupant
 - id: 18
   label: Tram
+  person_label: tram occupant
   font_awesome: subway
 - id: 19
   label: Van or goods vehicle (3.5t mgw or under)
+  person_label: van or goods vehicle (3.5t mgw or under) occupant
   font_awesome: truck
 - id: 20
   label: Goods vehicle (over 3.5t and under 7.5t)
+  person_label: goods vehicle (over 3.5t and under 7.5t) occupant
   font_awesome: truck
 - id: 21
   label: Goods vehicle (7.5t mgw and over)
+  person_label: goods vehicle (7.5t mgw and over) occupant
   font_awesome: truck
 - id: 22
   label: Mobility scooter
+  person_label: mobility scooter rider
 - id: 23
   label: Electric motorcycle
+  person_label: electric motorcycle rider or passenger
   font_awesome: motorcycle
 - id: 90
   label: Other vehicle
+  person_label: other vehicle occupant
   font_awesome: question
 - id: 97
   label: Motorcycle (unknown cc)
+  person_label: motorcycle (unknown cc) rider or passenger)
   font_awesome: motorcycle
 - id: 98
   label: Goods vehicle (unknown weight)
+  person_label: goods vehicle (unknown weight) occupant
   font_awesome: truck

@@ -1,0 +1,18 @@
+- id: 0
+  label: Not at or within 20 metres of junction
+- id: 1
+  label: Approaching junction or waiting/parked at junction approach
+- id: 2
+  label: Cleared junction or waiting/parked at junction exit
+- id: 3
+  label: Leaving roundabout
+- id: 4
+  label: Entering roundabout
+- id: 5
+  label: Leaving main road
+- id: 6
+  label: Entering main road
+- id: 7
+  label: Entering from slip road
+- id: 8
+  label: Mid Junction - on roundabout or on main road

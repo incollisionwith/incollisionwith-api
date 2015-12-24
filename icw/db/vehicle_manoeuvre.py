@@ -5,8 +5,8 @@ from sqlalchemy.orm import relationship
 from . import Base
 
 
-class TowingAndArticulation(Base):
-    __tablename__ = 'towing_and_articulation'
+class VehicleManoeuvre(Base):
+    __tablename__ = 'vehicle_manoeuvre'
 
     id = Column(Integer, primary_key=True)
     label = Column(String)

@@ -5,11 +5,13 @@ from sqlalchemy.orm import relationship
 from . import Base
 
 
-class TowingAndArticulation(Base):
-    __tablename__ = 'towing_and_articulation'
+class AgeBand(Base):
+    __tablename__ = 'age_band'
 
     id = Column(Integer, primary_key=True)
     label = Column(String)
+    gte = Column(Integer)
+    lt = Column(Integer, nullable=True)
 
     def to_json(self, verbose=False):
         return {

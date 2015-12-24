@@ -5,20 +5,22 @@ from sqlalchemy.orm import relationship
 from . import Base
 
 
-class VehicleType(Base):
-    __tablename__ = 'vehicle_type'
+class CasualtySeverity(Base):
+    __tablename__ = 'casualty_severity'
 
     id = Column(Integer, primary_key=True)
     label = Column(String)
-    person_label = Column(String)
-    font_awesome = Column(String, nullable=True)
-
+    comment = Column(String)
+    injury_definition = Column(String)
 
     def to_json(self, verbose=False):
         data = {
             'id': self.id,
             'label': self.label,
-            'personLabel': self.person_label,
-            'fontAwesome': self.font_awesome,
         }
+        if verbose:
+            data.update({
+                'comment': self.comment,
+                'injury_definition': self.injury_definition,
+            })
         return data

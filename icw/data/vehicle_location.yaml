@@ -1,0 +1,22 @@
+- id: 0
+  label: On main carriageway - not in restricted lane
+- id: 1
+  label: Tram/Light rail track
+- id: 2
+  label: Bus lane
+- id: 3
+  label: Busway (including guided busway)
+- id: 4
+  label: Cycle lane (on main carriageway)
+- id: 5
+  label: Cycleway or shared use footway (not part of main carriageway)
+- id: 6
+  label: On lay-by or hard shoulder
+- id: 7
+  label: Entering lay-by or hard shoulder
+- id: 8
+  label: Leaving lay-by or hard shoulder
+- id: 9
+  label: Footway (pavement)
+- id: 10
+  label: Not on carriageway

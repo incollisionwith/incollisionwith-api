@@ -1,0 +1,36 @@
+- id: 1
+  label: Reversing
+- id: 2
+  label: Parked
+- id: 3
+  label: Waiting to go - held up
+- id: 4
+  label: Slowing or stopping
+- id: 5
+  label: Moving off
+- id: 6
+  label: U-turn
+- id: 7
+  label: Turning left
+- id: 8
+  label: Waiting to turn left
+- id: 9
+  label: Turning right
+- id: 10
+  label: Waiting to turn right
+- id: 11
+  label: Changing lane to left
+- id: 12
+  label: Changing lane to right
+- id: 13
+  label: Overtaking moving vehicle - offside
+- id: 14
+  label: Overtaking static vehicle - offside
+- id: 15
+  label: Overtaking - nearside
+- id: 16
+  label: Going ahead left-hand bend
+- id: 17
+  label: Going ahead right-hand bend
+- id: 18
+  label: Going ahead other

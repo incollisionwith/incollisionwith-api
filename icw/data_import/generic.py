@@ -3,7 +3,8 @@ import pkgutil
 
 import yaml
 
-from icw.db import AccidentSeverity, VehicleType, TowingAndArticulation
+from icw.db import CasualtySeverity, VehicleType, TowingAndArticulation, CasualtyClass, Sex, AgeBand, JunctionDetail, \
+    JunctionControl, VehicleManoeuvre, VehicleLocation, PedestrianLocation, PedestrianMovement, JunctionLocation
 
 
 def load_generic(app, filename, model):
@@ -22,6 +23,16 @@ if __name__ == '__main__':
     from ..app import get_app
     app = get_app()
 
-    load_generic(app, 'data/accident_severity.yaml', AccidentSeverity)
-    load_generic(app, 'data/vehicle_type.yaml', VehicleType)
+    load_generic(app, 'data/age_band.yaml', AgeBand)
+    load_generic(app, 'data/casualty_class.yaml', CasualtyClass)
+    load_generic(app, 'data/casualty_severity.yaml', CasualtySeverity)
+    load_generic(app, 'data/junction_control.yaml', JunctionControl)
+    load_generic(app, 'data/junction_detail.yaml', JunctionDetail)
+    load_generic(app, 'data/junction_location.yaml', JunctionLocation)
     load_generic(app, 'data/towing_and_articulation.yaml', TowingAndArticulation)
+    load_generic(app, 'data/sex.yaml', Sex)
+    load_generic(app, 'data/vehicle_location.yaml', VehicleLocation)
+    load_generic(app, 'data/vehicle_manoeuvre.yaml', VehicleManoeuvre)
+    load_generic(app, 'data/vehicle_type.yaml', VehicleType)
+    load_generic(app, 'data/pedestrian_location.yaml', PedestrianLocation)
+    load_generic(app, 'data/pedestrian_movement.yaml', PedestrianMovement)
