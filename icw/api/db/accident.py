@@ -30,6 +30,16 @@ class Accident(Base):
     junction_detail = relationship('JunctionDetail')
     junction_control = relationship('JunctionControl')
 
+    vehicles = relationship('Vehicle', order_by='Vehicle.vehicle_ref')
+    casualties = relationship('Casualty', order_by='Casualty.casualty_ref')
+    citations = relationship('CitationAccident', back_populates='accident') #, order_by='Citation.published')
+
+    dimensions = {
+        'numberOfVehicles': number_of_vehicles,
+        'numberOfCasualties': number_of_casualties,
+        'location': location,
+    }
+
     def to_json(self):
         if self.location is not None:
             location = shapely.wkb.loads(bytes(self.location.data))
@@ -49,4 +59,9 @@ class Accident(Base):
             'policeAttended': self.police_attended,
             'solarElevation': self.solar_elevation,
             'moonPhase': self.moon_phase,
+            'junctionControl': self.junction_control.to_json() if self.junction_control else None,
+            'junctionDetail': self.junction_detail.to_json() if self.junction_detail else None,
+            'citations': [dict(certainty=assoc.certainty.to_json(),
+                               ** assoc.citation.to_json())
+                          for assoc in self.citations],
         }

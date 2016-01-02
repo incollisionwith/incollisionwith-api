@@ -1,0 +1,8 @@
+- id: 0
+  label: suggested
+- id: 1
+  label: possibly
+- id: 2
+  label: probably
+- id: 3
+  label: definite

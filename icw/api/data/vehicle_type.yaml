@@ -41,6 +41,7 @@
 - id: 16
   label: Ridden horse
   person_label: horse rider
+  font_awesome: header
 - id: 17
   label: Agricultural vehicle
   person_label: agricultural vehicle occupant

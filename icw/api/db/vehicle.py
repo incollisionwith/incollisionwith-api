@@ -20,7 +20,7 @@ class Vehicle(Base):
     driver_age_band_id = Column(Integer, ForeignKey('age_band.id'), index=True)
     driver_age = Column(Integer, nullable=True, index=True)
 
-    accident = relationship('Accident', backref='vehicles')
+    accident = relationship('Accident')
     type = relationship('VehicleType')
     towing_and_articulation = relationship('TowingAndArticulation')
     location = relationship('VehicleLocation')
@@ -29,14 +29,24 @@ class Vehicle(Base):
     driver_age_band = relationship('AgeBand')
     junction_location = relationship('JunctionLocation')
 
+    # dimensions = {
+    #     'type': type_id,
+    #     'towingAndArticulation': towing_and_articulation_id,
+    #     'location': location_id,
+    #     'manoeuvre': manoeuvre_id,
+    #     'junctionLocation': junction_location_id,
+    #     'driverAge': driver_age,
+    # }
+
     def to_json(self):
         return {
             'vehicleRef': self.vehicle_ref,
-            'type': self.type.to_json(),
+            'type': self.type.to_json() if self.type else None,
             'casualties': [casualty.to_json() for casualty in self.casualties],
             'manoeuvre': self.manoeuvre.to_json() if self.manoeuvre else None,
             'location': self.location.to_json() if self.location else None,
             'junctionLocation': self.junction_location.to_json() if self.junction_location else None,
+            'towingAndArticulation': self.towing_and_articulation.to_json() if self.towing_and_articulation else None,
             'driverSex': self.driver_sex.to_json() if self.driver_sex else None,
             'driverAgeBand': self.driver_age_band.to_json() if self.driver_age_band else None,
             'driverAge': self.driver_age

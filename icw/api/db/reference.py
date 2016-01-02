@@ -5,7 +5,7 @@ from . import Base
 __all__ = ['ReferenceTable',
            'AgeBand', 'CasualtyClass', 'CasualtySeverity', 'JunctionControl', 'JunctionDetail', 'JunctionLocation',
            'PedestrianLocation', 'PedestrianMovement', 'Sex', 'TowingAndArticulation', 'VehicleLocation',
-           'VehicleManoeuvre', 'VehicleType']
+           'VehicleManoeuvre', 'VehicleType', 'CitationCertainty']
 
 
 class ReferenceTable(Base):
@@ -46,6 +46,10 @@ class CasualtySeverity(ReferenceTable):
                 'injury_definition': self.injury_definition,
             })
         return data
+
+
+class CitationCertainty(ReferenceTable):
+    __tablename__ = 'citation_certainty'
 
 
 class JunctionControl(ReferenceTable):

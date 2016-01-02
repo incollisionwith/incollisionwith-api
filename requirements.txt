@@ -1,10 +1,14 @@
+GeoAlchemy2
 PyYAML
+rdflib
+rdflib-jsonld
 SPARQLWrapper
 SQLAlchemy
-GeoAlchemy2
 aiohttp
 aiohttp_utils
 astral
+lxml
+opengraph
 psycopg2
 pytz
 rdflib

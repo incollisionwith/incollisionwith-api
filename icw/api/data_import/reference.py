@@ -8,7 +8,7 @@ from .. import db
 def load_generic(app, filename, model):
     session = app['db-session']()
 
-    data = yaml.load(pkgutil.get_data('icw', filename))
+    data = yaml.load(pkgutil.get_data('icw.api', filename))
     for datum in data:
         accident_severity = model(**datum)
         session.merge(accident_severity)

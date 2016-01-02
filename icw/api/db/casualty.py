@@ -43,7 +43,7 @@ class Casualty(Base):
         return {
             'casualtyRef': self.casualty_ref,
             'class': self.class_.to_json(),
-            'sex': self.sex.to_json(),
+            'sex': self.sex.to_json() if self.sex else None,
             'severity': self.severity.to_json(),
             'ageBand': self.age_band.to_json() if self.age_band else None,
             'age': self.age,

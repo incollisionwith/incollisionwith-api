@@ -21,7 +21,7 @@ SELECT * WHERE {{
 dbpedia_resource_prefix = 'http://dbpedia.org/resource/'
 
 def load_police_force(app):
-    data = yaml.load(pkgutil.get_data('icw', 'data/police_force.yaml'))
+    data = yaml.load(pkgutil.get_data('icw.api', 'data/police_force.yaml'))
     for datum in data:
         datum['uri'] = rdflib.URIRef(dbpedia_resource_prefix + datum.pop('dbpedia'))
 
