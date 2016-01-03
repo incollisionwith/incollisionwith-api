@@ -11,5 +11,4 @@ lxml
 opengraph
 psycopg2
 pytz
-rdflib
 shapely
