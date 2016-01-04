@@ -73,7 +73,7 @@ class AccidentListHandler(BaseHandler):
         # Add pagination links
         qs = request.GET.copy()
         qs.pop('p', None)
-        qs = tuple(qs)
+        qs = tuple(qs.items())
         if page > 1:
             data['_links']['prev'] = {'href': '?' + urlencode(qs + (('p', str(page - 1)),))}
         if page < page_count:
