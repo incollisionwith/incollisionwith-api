@@ -85,7 +85,10 @@ class AccidentListHandler(BaseHandler):
 class AccidentDetailHandler(BaseHandler):
     @asyncio.coroutine
     def get(self, request):
-        accident = request.session.query(Accident).get(request.match_info['accident_id'])
+        accident = request.session.query(Accident) \
+            .options(joinedload('citations').joinedload('citation'),
+                     joinedload('vehicles').joinedload('casualties')) \
+            .get(request.match_info['accident_id'])
         if not accident:
             return HTTPNotFound()
         return Response(accident.to_json())
