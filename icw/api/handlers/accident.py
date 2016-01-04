@@ -53,8 +53,6 @@ class AccidentListHandler(BaseHandler):
 
         count = query.count()
         page_count = max(1, math.ceil(count / self.page_size))
-        if page > page_count:
-            raise HTTPNotFound
 
         query = query.offset((page - 1) * self.page_size).limit(self.page_size)
 
