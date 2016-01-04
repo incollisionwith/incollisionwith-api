@@ -1,7 +1,11 @@
 import asyncio
 
+import math
+from urllib.parse import urlencode
+
 from aiohttp.web_exceptions import HTTPNotFound, HTTPBadRequest
 from aiohttp_utils import Response
+from sqlalchemy.orm import joinedload
 
 from ..db import Accident, Vehicle, Casualty
 from . import BaseHandler
@@ -10,14 +14,16 @@ __all__ = ['AccidentListHandler', 'AccidentDetailHandler']
 
 
 class AccidentListHandler(BaseHandler):
-    page_size = 50
+    page_size = 100
 
     @asyncio.coroutine
     def get(self, request):
-        query = request.session.query(Accident)
+        query = request.session.query(Accident).options(joinedload('vehicles').joinedload('casualties'))
 
         try:
             page = int(request.GET.get('p') or 1)
+            if page < 1:
+                raise HTTPNotFound
         except ValueError:
             raise HTTPBadRequest
 
@@ -25,7 +31,6 @@ class AccidentListHandler(BaseHandler):
             query = query.filter(Accident.citations.any())
 
         if 'sort' in request.GET:
-
             query = query.order_by(*request.GET.getall('sort'))
 
         if 'severity' in request.GET:
@@ -45,9 +50,36 @@ class AccidentListHandler(BaseHandler):
                                                                                                     x2=x2,
                                                                                                     y2=y2)))
 
+        count = query.count()
+        page_count = max(1, math.ceil(count / self.page_size))
+        if page > page_count:
+            raise HTTPNotFound
+
         query = query.offset((page - 1) * self.page_size).limit(self.page_size)
 
-        return Response([a.to_json() for a in query.all()])
+        data = {
+            'page': page,
+            'count': count,
+            'pageCount': page_count,
+            '_links': {
+                'self': {'href': request.path_qs},
+            },
+            '_embedded': {
+                'item': [a.to_json() for a in query.all()]
+            },
+        }
+
+        # Add pagination links
+        qs = request.GET.copy()
+        qs.pop('p', None)
+        qs = tuple(qs)
+        if page > 1:
+            data['_links']['prev'] = {'href': '?' + urlencode(qs + (('p', str(page - 1)),))}
+        if page < page_count:
+            data['_links']['next'] = {'href': '?' + urlencode(qs + (('p', str(page + 1)),))}
+
+
+        return Response(data)
 
 class AccidentDetailHandler(BaseHandler):
     @asyncio.coroutine
