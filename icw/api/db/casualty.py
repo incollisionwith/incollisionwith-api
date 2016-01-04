@@ -24,13 +24,13 @@ class Casualty(Base):
 
     accident = relationship('Accident', viewonly=True)
     vehicle = relationship('Vehicle', foreign_keys=[accident_id, vehicle_ref], backref='casualties')
-    age_band = relationship('AgeBand')
-    class_ = relationship('CasualtyClass')
-    sex = relationship('Sex')
-    severity = relationship('CasualtySeverity')
-    type = relationship('VehicleType')
-    pedestrian_location = relationship('PedestrianLocation')
-    pedestrian_movement = relationship('PedestrianMovement')
+    age_band = relationship('AgeBand', lazy='joined')
+    class_ = relationship('CasualtyClass', lazy='joined')
+    sex = relationship('Sex', lazy='joined')
+    severity = relationship('CasualtySeverity', lazy='joined')
+    type = relationship('VehicleType', lazy='joined')
+    pedestrian_location = relationship('PedestrianLocation', lazy='joined')
+    pedestrian_movement = relationship('PedestrianMovement', lazy='joined')
 
     __table_args__ = (
         ForeignKeyConstraint(

@@ -18,7 +18,8 @@ class AccidentListHandler(BaseHandler):
 
     @asyncio.coroutine
     def get(self, request):
-        query = request.session.query(Accident).options(joinedload('vehicles').joinedload('casualties'))
+        query = request.session.query(Accident).options(joinedload('citations').joinedload('citation'),
+                                                        joinedload('vehicles').joinedload('casualties'))
 
         try:
             page = int(request.GET.get('p') or 1)

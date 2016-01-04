@@ -21,13 +21,13 @@ class Vehicle(Base):
     driver_age = Column(Integer, nullable=True, index=True)
 
     accident = relationship('Accident')
-    type = relationship('VehicleType')
-    towing_and_articulation = relationship('TowingAndArticulation')
-    location = relationship('VehicleLocation')
-    manoeuvre = relationship('VehicleManoeuvre')
-    driver_sex = relationship('Sex')
-    driver_age_band = relationship('AgeBand')
-    junction_location = relationship('JunctionLocation')
+    type = relationship('VehicleType', lazy='joined')
+    towing_and_articulation = relationship('TowingAndArticulation', lazy='joined')
+    location = relationship('VehicleLocation', lazy='joined')
+    manoeuvre = relationship('VehicleManoeuvre', lazy='joined')
+    driver_sex = relationship('Sex', lazy='joined')
+    driver_age_band = relationship('AgeBand', lazy='joined')
+    junction_location = relationship('JunctionLocation', lazy='joined')
 
     # dimensions = {
     #     'type': type_id,

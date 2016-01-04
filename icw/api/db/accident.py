@@ -25,10 +25,10 @@ class Accident(Base):
     solar_elevation = Column(Float, nullable=True)
     moon_phase = Column(Integer, nullable=True)
 
-    police_force = relationship('PoliceForce')
-    severity = relationship('CasualtySeverity')
-    junction_detail = relationship('JunctionDetail')
-    junction_control = relationship('JunctionControl')
+    police_force = relationship('PoliceForce', lazy='joined')
+    severity = relationship('CasualtySeverity', lazy='joined')
+    junction_detail = relationship('JunctionDetail', lazy='joined')
+    junction_control = relationship('JunctionControl', lazy='joined')
 
     vehicles = relationship('Vehicle', order_by='Vehicle.vehicle_ref', viewonly=True)
     casualties = relationship('Casualty', order_by='Casualty.casualty_ref', viewonly=True)
@@ -49,7 +49,7 @@ class Accident(Base):
         return {
             'id': self.id,
             'location': location,
-            'police_force': self.police_force.to_json(),
+            'police_force': self.police_force.to_json(verbose=False),
             'severity': self.severity.to_json(),
             'numberOfVehicles': self.number_of_vehicles,
             'numberOfCasualties': self.number_of_casualties,
