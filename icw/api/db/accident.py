@@ -30,8 +30,8 @@ class Accident(Base):
     junction_detail = relationship('JunctionDetail')
     junction_control = relationship('JunctionControl')
 
-    vehicles = relationship('Vehicle', order_by='Vehicle.vehicle_ref')
-    casualties = relationship('Casualty', order_by='Casualty.casualty_ref')
+    vehicles = relationship('Vehicle', order_by='Vehicle.vehicle_ref', viewonly=True)
+    casualties = relationship('Casualty', order_by='Casualty.casualty_ref', viewonly=True)
     citations = relationship('CitationAccident', back_populates='accident') #, order_by='Citation.published')
 
     dimensions = {

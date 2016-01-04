@@ -22,7 +22,7 @@ class Casualty(Base):
     pedestrian_location_id = Column(Integer, ForeignKey('pedestrian_location.id'), nullable=True)
     pedestrian_movement_id = Column(Integer, ForeignKey('pedestrian_movement.id'), nullable=True)
 
-    accident = relationship('Accident')
+    accident = relationship('Accident', viewonly=True)
     vehicle = relationship('Vehicle', foreign_keys=[accident_id, vehicle_ref], backref='casualties')
     age_band = relationship('AgeBand')
     class_ = relationship('CasualtyClass')
