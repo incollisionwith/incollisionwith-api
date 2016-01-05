@@ -2,8 +2,7 @@ aiohttp
 aiohttp_utils
 astral
 GeoAlchemy2
-lxml
-opengraph
+html5lib
 psycopg2
 pytz
 PyYAML
