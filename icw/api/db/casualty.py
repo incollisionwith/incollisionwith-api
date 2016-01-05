@@ -24,13 +24,13 @@ class Casualty(Base):
 
     accident = relationship('Accident', viewonly=True)
     vehicle = relationship('Vehicle', foreign_keys=[accident_id, vehicle_ref], backref='casualties')
-    age_band = relationship('AgeBand', lazy='joined')
-    class_ = relationship('CasualtyClass', lazy='joined')
-    sex = relationship('Sex', lazy='joined')
-    severity = relationship('CasualtySeverity', lazy='joined')
-    type = relationship('VehicleType', lazy='joined')
-    pedestrian_location = relationship('PedestrianLocation', lazy='joined')
-    pedestrian_movement = relationship('PedestrianMovement', lazy='joined')
+    age_band = relationship('AgeBand')
+    class_ = relationship('CasualtyClass')
+    sex = relationship('Sex')
+    severity = relationship('CasualtySeverity')
+    type = relationship('VehicleType')
+    pedestrian_location = relationship('PedestrianLocation')
+    pedestrian_movement = relationship('PedestrianMovement')
 
     __table_args__ = (
         ForeignKeyConstraint(
@@ -39,16 +39,16 @@ class Casualty(Base):
         ),
     )
 
-    def to_json(self):
+    def to_json(self, app):
         return {
             'casualtyRef': self.casualty_ref,
-            'class': self.class_.to_json(),
-            'sex': self.sex.to_json() if self.sex else None,
-            'severity': self.severity.to_json(),
-            'ageBand': self.age_band.to_json() if self.age_band else None,
+            'class': app['reference-data']['CasualtyClass'].get(self.class_id),
+            'sex': app['reference-data']['Sex'].get(self.sex_id),
+            'severity': app['reference-data']['CasualtySeverity'].get(self.severity_id),
+            'ageBand': app['reference-data']['AgeBand'].get(self.age_band_id),
             'age': self.age,
-            'type': self.type.to_json(),
-            'pedestrianLocation': self.pedestrian_location.to_json() if self.pedestrian_location else None,
-            'pedestrianMovement': self.pedestrian_movement.to_json() if self.pedestrian_movement else None,
+            'type': app['reference-data']['VehicleType'].get(self.type_id),
+            'pedestrianLocation': app['reference-data']['PedestrianLocation'].get(self.pedestrian_location_id),
+            'pedestrianMovement': app['reference-data']['PedestrianMovement'].get(self.pedestrian_movement_id),
 
         }

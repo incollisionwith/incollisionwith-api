@@ -25,10 +25,10 @@ class Accident(Base):
     solar_elevation = Column(Float, nullable=True)
     moon_phase = Column(Integer, nullable=True)
 
-    police_force = relationship('PoliceForce', lazy='joined')
-    severity = relationship('CasualtySeverity', lazy='joined')
-    junction_detail = relationship('JunctionDetail', lazy='joined')
-    junction_control = relationship('JunctionControl', lazy='joined')
+    police_force = relationship('PoliceForce')
+    severity = relationship('CasualtySeverity')
+    junction_detail = relationship('JunctionDetail')
+    junction_control = relationship('JunctionControl')
 
     vehicles = relationship('Vehicle', order_by='Vehicle.vehicle_ref', viewonly=True)
     casualties = relationship('Casualty', order_by='Casualty.casualty_ref', viewonly=True)
@@ -40,7 +40,7 @@ class Accident(Base):
         'location': location,
     }
 
-    def to_json(self):
+    def to_json(self, app):
         if self.location is not None:
             location = shapely.wkb.loads(bytes(self.location.data))
             location = {'lat': location.y, 'lon': location.x}
@@ -49,18 +49,18 @@ class Accident(Base):
         return {
             'id': self.id,
             'location': location,
-            'police_force': self.police_force.to_json(verbose=False),
-            'severity': self.severity.to_json(),
+            'police_force': app['reference-data']['PoliceForce'][self.police_force_id],
+            'severity': app['reference-data']['CasualtySeverity'][self.severity_id],
             'numberOfVehicles': self.number_of_vehicles,
             'numberOfCasualties': self.number_of_casualties,
-            'vehicles': [vehicle.to_json() for vehicle in self.vehicles],
+            'vehicles': [vehicle.to_json(app) for vehicle in self.vehicles],
             'date': self.date.isoformat(),
             'dateTime': self.date_and_time.isoformat() if self.date_and_time else None,
             'policeAttended': self.police_attended,
             'solarElevation': self.solar_elevation,
             'moonPhase': self.moon_phase,
-            'junctionControl': self.junction_control.to_json() if self.junction_control else None,
-            'junctionDetail': self.junction_detail.to_json() if self.junction_detail else None,
+            'junctionControl': app['reference-data']['JunctionControl'].get(self.junction_control_id),
+            'junctionDetail': app['reference-data']['JunctionDetail'].get(self.junction_detail_id),
             'citations': [dict(certainty=assoc.certainty.to_json(),
                                ** assoc.citation.to_json())
                           for assoc in self.citations],

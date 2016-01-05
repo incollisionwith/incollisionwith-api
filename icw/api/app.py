@@ -10,6 +10,24 @@ from aiohttp_utils import negotiation
 from icw.api import middleware
 from . import handlers
 
+
+def get_reference_data(app):
+    from icw.api import db
+    session = app['db-session']()
+
+    data = {}
+    for name in dir(db):
+        cls = getattr(db, name)
+        if cls is db.PoliceForce or (
+                        isinstance(cls, type) and \
+                        issubclass(cls, db.ReferenceTable) and \
+                        cls is not db.ReferenceTable):
+            data[cls.__name__] = {d.id: d.to_json() for d in session.query(cls).all()}
+
+    session.close()
+
+    return data
+
 def get_app():
     app = aiohttp.web.Application(middlewares=[middleware.session_middleware])
 
@@ -27,6 +45,8 @@ def get_app():
                          handlers.CitationSubmissionHandler())
     app.router.add_route('*', '/statistics',
                          handlers.StatisticsHandler())
+
+    app['reference-data'] = get_reference_data(app)
 
     negotiation.setup(app)
 

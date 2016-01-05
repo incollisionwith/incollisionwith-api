@@ -21,13 +21,13 @@ class Vehicle(Base):
     driver_age = Column(Integer, nullable=True, index=True)
 
     accident = relationship('Accident')
-    type = relationship('VehicleType', lazy='joined')
-    towing_and_articulation = relationship('TowingAndArticulation', lazy='joined')
-    location = relationship('VehicleLocation', lazy='joined')
-    manoeuvre = relationship('VehicleManoeuvre', lazy='joined')
-    driver_sex = relationship('Sex', lazy='joined')
-    driver_age_band = relationship('AgeBand', lazy='joined')
-    junction_location = relationship('JunctionLocation', lazy='joined')
+    type = relationship('VehicleType')
+    towing_and_articulation = relationship('TowingAndArticulation')
+    location = relationship('VehicleLocation')
+    manoeuvre = relationship('VehicleManoeuvre')
+    driver_sex = relationship('Sex')
+    driver_age_band = relationship('AgeBand')
+    junction_location = relationship('JunctionLocation')
 
     # dimensions = {
     #     'type': type_id,
@@ -38,16 +38,16 @@ class Vehicle(Base):
     #     'driverAge': driver_age,
     # }
 
-    def to_json(self):
+    def to_json(self, app):
         return {
             'vehicleRef': self.vehicle_ref,
-            'type': self.type.to_json() if self.type else None,
-            'casualties': [casualty.to_json() for casualty in self.casualties],
-            'manoeuvre': self.manoeuvre.to_json() if self.manoeuvre else None,
-            'location': self.location.to_json() if self.location else None,
-            'junctionLocation': self.junction_location.to_json() if self.junction_location else None,
-            'towingAndArticulation': self.towing_and_articulation.to_json() if self.towing_and_articulation else None,
-            'driverSex': self.driver_sex.to_json() if self.driver_sex else None,
-            'driverAgeBand': self.driver_age_band.to_json() if self.driver_age_band else None,
+            'type': app['reference-data']['VehicleType'].get(self.type_id),
+            'casualties': [casualty.to_json(app) for casualty in self.casualties],
+            'manoeuvre': app['reference-data']['VehicleManoeuvre'].get(self.manoeuvre_id),
+            'location': app['reference-data']['VehicleLocation'].get(self.location_id),
+            'junctionLocation': app['reference-data']['JunctionLocation'].get(self.junction_location_id),
+            'towingAndArticulation': app['reference-data']['TowingAndArticulation'].get(self.towing_and_articulation_id),
+            'driverSex': app['reference-data']['Sex'].get(self.driver_sex_id),
+            'driverAgeBand': app['reference-data']['AgeBand'].get(self.driver_age_band_id),
             'driverAge': self.driver_age
         }

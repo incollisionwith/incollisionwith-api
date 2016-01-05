@@ -64,7 +64,7 @@ class AccidentListHandler(BaseHandler):
                 'self': {'href': request.path_qs},
             },
             '_embedded': {
-                'item': [a.to_json() for a in query.all()]
+                'item': [a.to_json(request.app) for a in query.all()]
             },
         }
 
@@ -77,8 +77,8 @@ class AccidentListHandler(BaseHandler):
         if page < page_count:
             data['_links']['next'] = {'href': '?' + urlencode(qs + (('p', str(page + 1)),))}
 
-
         return Response(data)
+
 
 class AccidentDetailHandler(BaseHandler):
     @asyncio.coroutine
@@ -89,4 +89,4 @@ class AccidentDetailHandler(BaseHandler):
             .get(request.match_info['accident_id'])
         if not accident:
             return HTTPNotFound()
-        return Response(accident.to_json())
+        return Response(accident.to_json(request.app))
