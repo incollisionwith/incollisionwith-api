@@ -33,7 +33,7 @@ def get_citation_title(doc, uri, og, graph):
         yield graph.value(uri, SCHEMA.headline)
     yield og.get('og:title')
     try:
-        yield (doc.getroot().get('head').get('title').text or '').strip() or None
+        yield (doc.find('{http://www.w3.org/1999/xhtml}head').find('{http://www.w3.org/1999/xhtml}title').text or '').strip() or None
     except AttributeError:
         pass
 
@@ -42,7 +42,7 @@ def get_citation_title(doc, uri, og, graph):
 def get_citation_description(doc, uri, og, graph):
     if uri:
         yield graph.value(uri, SCHEMA.articleBody)
-    yield og.get('og:description')
+    yield og.get('og:description', '').strip() or None
 
 
 @first_non_null
@@ -73,11 +73,11 @@ def fetch_citation(session, citation):
 
     doc = html5lib.parse(body)
     graph = rdflib.Graph()
-    for jsonld in doc.iter('script'):
+    for jsonld in doc.iter('{http://www.w3.org/1999/xhtml}script'):
         if jsonld.attrib.get('type') == 'application/ld+json':
             graph.parse(BytesIO(jsonld.text.encode()), response.url, format='json-ld')
 
-    og = [n for n in doc.iter('meta') if n.attrib.get('property', '').startswith('og:') and 'content' in n.attrib]
+    og = [n for n in doc.iter('{http://www.w3.org/1999/xhtml}meta') if n.attrib.get('property', '').startswith('og:') and 'content' in n.attrib]
     og = {n.attrib['property']: n.attrib['content'] for n in og}
 
     uri = graph.value(None, SCHEMA.url, rdflib.URIRef(response.url))
@@ -91,7 +91,7 @@ def fetch_citation(session, citation):
 
     citation.last_crawled = pytz.utc.localize(datetime.datetime.utcnow())
 
-    session.add(citation)
+    session.merge(citation)
 
 
 if __name__ == '__main__':
