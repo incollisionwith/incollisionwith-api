@@ -1,0 +1,24 @@
+- id: 0
+  label: None
+- id: 1
+  label: Road sign or traffic signal
+- id: 2
+  label: Lamp post
+- id: 3
+  label: Telegraph or electricity pole
+- id: 4
+  label: Tree
+- id: 5
+  label: Bus stop or bus shelter
+- id: 6
+  label: Central crash barrier
+- id: 7
+  label: Near/Offside crash barrier
+- id: 8
+  label: Submerged in water
+- id: 9
+  label: Entered ditch
+- id: 10
+  label: Other permanent object
+- id: 11
+  label: Wall or fence

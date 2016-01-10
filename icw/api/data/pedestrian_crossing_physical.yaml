@@ -1,0 +1,12 @@
+- id: 0
+  label: No physical crossing facilities within 50 metres
+- id: 1
+  label: Zebra
+- id: 4
+  label: Pelican, puffin, toucan or similar non-junction pedestrian light crossing
+- id: 5
+  label: Pedestrian phase at traffic signal junction
+- id: 7
+  label: Footbridge or subway
+- id: 8
+  label: Central refuge

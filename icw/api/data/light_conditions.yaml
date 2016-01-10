@@ -1,0 +1,10 @@
+- id: 1
+  label: Daylight
+- id: 4
+  label: Darkness - lights lit
+- id: 5
+  label: Darkness - lights unlit
+- id: 6
+  label: Darkness - no lighting
+- id: 7
+  label: Darkness - lighting unknown

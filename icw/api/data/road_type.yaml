@@ -1,0 +1,14 @@
+- id: 1
+  label: Roundabout
+- id: 2
+  label: One way street
+- id: 3
+  label: Dual carriageway
+- id: 6
+  label: Single carriageway
+- id: 7
+  label: Slip road
+- id: 9
+  label: Unknown
+- id: 12
+  label: One way street/Slip road

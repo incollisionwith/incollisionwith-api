@@ -1,0 +1,14 @@
+- id: 1
+  label: Dry
+- id: 2
+  label: Wet or damp
+- id: 3
+  label: Snow
+- id: 4
+  label: Frost or ice
+- id: 5
+  label: Flood over 3cm. deep
+- id: 6
+  label: Oil or diesel
+- id: 7
+  label: Mud

@@ -1,0 +1,18 @@
+- id: 0
+  label: Did not leave carriageway
+- id: 1
+  label: Nearside
+- id: 2
+  label: Nearside and rebounded
+- id: 3
+  label: Straight ahead at junction
+- id: 4
+  label: Offside on to central reservation
+- id: 5
+  label: Offside on to centrl res + rebounded
+- id: 6
+  label: Offside - crossed central reservation
+- id: 7
+  label: Offside
+- id: 8
+  label: Offside and rebounded

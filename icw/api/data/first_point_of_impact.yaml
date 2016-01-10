@@ -1,0 +1,10 @@
+- id: 0
+  label: Did not impact
+- id: 1
+  label: Front
+- id: 2
+  label: Back
+- id: 3
+  label: Offside
+- id: 4
+  label: Nearside

@@ -1,11 +1,10 @@
-from sqlalchemy import String, Column, Integer
-
+from sqlalchemy import String, Column, SmallInteger
 from . import Base
 
 class PoliceForce(Base):
     __tablename__ = 'police_force'
 
-    id = Column(Integer, primary_key=True)
+    id = Column(SmallInteger, primary_key=True)
     uri = Column(String, index=True)
     label = Column(String)
     comment = Column(String)

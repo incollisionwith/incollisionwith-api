@@ -1,0 +1,16 @@
+- id: 0
+  label: None
+- id: 1
+  label: Vehicle load on road
+- id: 2
+  label: Other object on road
+- id: 3
+  label: Previous accident
+- id: 4
+  label: Dog on road
+- id: 5
+  label: Other animal on road
+- id: 6
+  label: Pedestrian in carriageway - not injured
+- id: 7
+  label: Any animal in carriageway (except ridden horse)

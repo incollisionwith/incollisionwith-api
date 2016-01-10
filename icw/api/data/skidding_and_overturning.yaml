@@ -1,0 +1,12 @@
+- id: 0
+  label: None
+- id: 1
+  label: Skidded
+- id: 2
+  label: Skidded and overturned
+- id: 3
+  label: Jackknifed
+- id: 4
+  label: Jackknifed and overturned
+- id: 5
+  label: Overturned

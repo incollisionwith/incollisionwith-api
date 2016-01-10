@@ -1,0 +1,16 @@
+- id: 0
+  label: None
+- id: 1
+  label: Auto traffic signal - out
+- id: 2
+  label: Auto signal part defective
+- id: 3
+  label: Road sign or marking defective or obscured
+- id: 4
+  label: Roadworks
+- id: 5
+  label: Road surface defective
+- id: 6
+  label: Oil or diesel
+- id: 7
+  label: Mud

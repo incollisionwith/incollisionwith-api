@@ -1,0 +1,19 @@
+- id: 0
+  label: Not at junction or within 20 metres
+- id: 1
+  label: Motorway
+  pattern: M{}
+- id: 2
+  label: A(M)
+  pattern: A{}(M)
+- id: 3
+  label: A
+  pattern: A{}
+- id: 4
+  label: B
+  pattern: B{}
+- id: 5
+  label: C
+  pattern: C{}
+- id: 6
+  label: Unclassified

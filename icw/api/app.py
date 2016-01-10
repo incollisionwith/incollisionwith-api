@@ -28,7 +28,8 @@ def get_reference_data(app):
 
     return data
 
-def get_app():
+
+def get_app(with_reference_data=True):
     app = aiohttp.web.Application(middlewares=[middleware.session_middleware])
 
     app['dbpedia-sparql'] = functools.partial(SPARQLWrapper2,
@@ -46,7 +47,8 @@ def get_app():
     app.router.add_route('*', '/statistics',
                          handlers.StatisticsHandler())
 
-    app['reference-data'] = get_reference_data(app)
+    if with_reference_data:
+        app['reference-data'] = get_reference_data(app)
 
     negotiation.setup(app)
 

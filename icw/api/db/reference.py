@@ -1,17 +1,19 @@
-from sqlalchemy import Column, Integer, String
-
+from sqlalchemy import Column, String, SmallInteger
 from . import Base
 
 __all__ = ['ReferenceTable',
-           'AgeBand', 'CasualtyClass', 'CasualtySeverity', 'JunctionControl', 'JunctionDetail', 'JunctionLocation',
-           'PedestrianLocation', 'PedestrianMovement', 'Sex', 'TowingAndArticulation', 'VehicleLocation',
-           'VehicleManoeuvre', 'VehicleType', 'CitationCertainty']
+           'AgeBand', 'CarriagewayHazards', 'CasualtyClass', 'CasualtySeverity', 'CitationCertainty',
+           'FirstPointOfImpact', 'HitObjectInCarriageway', 'HitObjectOffCarriageway', 'JunctionControl',
+           'JunctionDetail', 'JunctionLocation', 'LightConditions', 'PedestrianCrossingHuman',
+           'PedestrianCrossingPhysical', 'PedestrianLocation', 'PedestrianMovement', 'RoadClass', 'RoadSurface',
+           'RoadType', 'Sex', 'SkiddingAndOverturning', 'SpecialConditions', 'TowingAndArticulation', 'UrbanRural',
+           'VehicleLeavingCarriageway', 'VehicleLocation', 'VehicleManoeuvre', 'VehicleType', 'Weather']
 
 
 class ReferenceTable(Base):
     __abstract__ = True
 
-    id = Column(Integer, primary_key=True)
+    id = Column(SmallInteger, primary_key=True)
     label = Column(String)
 
     def to_json(self, verbose=False):
@@ -24,8 +26,12 @@ class ReferenceTable(Base):
 class AgeBand(ReferenceTable):
     __tablename__ = 'age_band'
 
-    gte = Column(Integer)
-    lt = Column(Integer, nullable=True)
+    gte = Column(SmallInteger)
+    lt = Column(SmallInteger, nullable=True)
+
+
+class CarriagewayHazards(ReferenceTable):
+    __tablename__ = 'carriageway_hazards'
 
 
 class CasualtyClass(ReferenceTable):
@@ -52,6 +58,18 @@ class CitationCertainty(ReferenceTable):
     __tablename__ = 'citation_certainty'
 
 
+class FirstPointOfImpact(ReferenceTable):
+    __tablename__ = 'first_point_of_impact'
+
+
+class HitObjectInCarriageway(ReferenceTable):
+    __tablename__ = 'hit_object_in_carriageway'
+
+
+class HitObjectOffCarriageway(ReferenceTable):
+    __tablename__ = 'hit_object_off_carriageway'
+
+
 class JunctionControl(ReferenceTable):
     __tablename__ = 'junction_control'
 
@@ -64,6 +82,18 @@ class JunctionLocation(ReferenceTable):
     __tablename__ = 'junction_location'
 
 
+class LightConditions(ReferenceTable):
+    __tablename__ = 'light_conditions'
+
+
+class PedestrianCrossingHuman(ReferenceTable):
+    __tablename__ = 'pedestrian_crossing_human'
+
+
+class PedestrianCrossingPhysical(ReferenceTable):
+    __tablename__ = 'pedestrian_crossing_physical'
+
+
 class PedestrianLocation(ReferenceTable):
     __tablename__ = 'pedestrian_location'
 
@@ -72,12 +102,42 @@ class PedestrianMovement(ReferenceTable):
     __tablename__ = 'pedestrian_movement'
 
 
+class RoadClass(ReferenceTable):
+    __tablename__ = 'road_class'
+
+    pattern = Column(String)
+
+
+class RoadSurface(ReferenceTable):
+    __tablename__ = 'road_surface'
+
+
+class RoadType(ReferenceTable):
+    __tablename__ = 'road_type'
+
+
 class Sex(ReferenceTable):
     __tablename__ = 'sex'
 
 
+class SkiddingAndOverturning(ReferenceTable):
+    __tablename__ = 'skidding_and_overturning'
+
+
+class SpecialConditions(ReferenceTable):
+    __tablename__ = 'special_conditions'
+
+
 class TowingAndArticulation(ReferenceTable):
     __tablename__ = 'towing_and_articulation'
+
+
+class UrbanRural(ReferenceTable):
+    __tablename__ = 'urban_rural'
+
+
+class VehicleLeavingCarriageway(ReferenceTable):
+    __tablename__ = 'vehicle_leaving_carriageway'
 
 
 class VehicleLocation(ReferenceTable):
@@ -101,3 +161,7 @@ class VehicleType(ReferenceTable):
             'fontAwesome': self.font_awesome,
         })
         return data
+
+
+class Weather(ReferenceTable):
+    __tablename__ = 'weather'

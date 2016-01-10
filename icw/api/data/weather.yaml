@@ -1,0 +1,18 @@
+- id: 1
+  label: Fine no high winds
+- id: 2
+  label: Raining no high winds
+- id: 3
+  label: Snowing no high winds
+- id: 4
+  label: Fine + high winds
+- id: 5
+  label: Raining + high winds
+- id: 6
+  label: Snowing + high winds
+- id: 7
+  label: Fog or mist
+- id: 8
+  label: Other
+- id: 9
+  label: Unknown

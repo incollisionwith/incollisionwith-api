@@ -1,0 +1,24 @@
+- id: 0
+  label: None
+- id: 1
+  label: Previous accident
+- id: 2
+  label: Road works
+- id: 4
+  label: Parked vehicle
+- id: 5
+  label: Bridge (roof)
+- id: 6
+  label: Bridge (side)
+- id: 7
+  label: Bollard or refuge
+- id: 8
+  label: Open door of vehicle
+- id: 9
+  label: Central island of roundabout
+- id: 10
+  label: Kerb
+- id: 11
+  label: Other object
+- id: 12
+  label: Any animal (except ridden horse)

@@ -19,7 +19,7 @@ def load_generic(app, filename, model):
 if __name__ == '__main__':
     import sys
     from ..app import get_app
-    app = get_app()
+    app = get_app(with_reference_data=False)
 
     for name in dir(db):
         cls = getattr(db, name)

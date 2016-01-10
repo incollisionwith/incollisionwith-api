@@ -1,0 +1,6 @@
+- id: 1
+  label: Urban
+- id: 2
+  label: Rural
+- id: 3
+  label: Unallocated
