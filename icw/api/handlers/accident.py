@@ -5,6 +5,7 @@ from urllib.parse import urlencode
 
 from aiohttp.web_exceptions import HTTPNotFound, HTTPBadRequest
 from aiohttp_utils import Response
+import dateutil.parser
 from sqlalchemy.orm import joinedload
 
 from ..db import Accident, Vehicle, Casualty
@@ -33,6 +34,22 @@ class AccidentListHandler(BaseHandler):
 
         if 'sort' in request.GET:
             query = query.order_by(*request.GET.getall('sort'))
+
+        if 'dateTimeLower' in request.GET:
+            try:
+                datetime_lower = dateutil.parser.parse(request.GET['dateTimeLower'])
+            except ValueError:
+                raise HTTPBadRequest
+            else:
+                query = query.filter(Accident.date_and_time >= datetime_lower)
+        if 'dateTimeUpper' in request.GET:
+            try:
+                datetime_upper = dateutil.parser.parse(request.GET['dateTimeUpper'])
+            except ValueError:
+                raise HTTPBadRequest
+            else:
+                query = query.filter(Accident.date_and_time < datetime_upper)
+
 
         if 'severity' in request.GET:
             query = query.filter(Accident.severity_id.in_(request.GET.getall('severity')))

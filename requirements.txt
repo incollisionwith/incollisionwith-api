@@ -4,6 +4,7 @@ astral
 GeoAlchemy2
 html5lib
 psycopg2
+python-dateutil
 pytz
 PyYAML
 rdflib
