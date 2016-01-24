@@ -10,7 +10,7 @@ class Accident(Base):
     __tablename__ = 'accident'
 
     id = Column(String(13), primary_key=True)
-    location = Column(Geometry(geometry_type='POINT', srid=4326), nullable=True)
+    location = Column(Geometry(geometry_type='POINT', srid=4326), index=True, nullable=True)
     police_force_id = Column(SmallInteger, ForeignKey('police_force.id'))
     severity_id = Column(SmallInteger, ForeignKey('casualty_severity.id'))
     junction_control_id = Column(SmallInteger, ForeignKey('junction_control.id'), nullable=True)
@@ -18,8 +18,8 @@ class Accident(Base):
 
     number_of_vehicles = Column(SmallInteger)
     number_of_casualties = Column(SmallInteger)
-    date = Column(Date)
-    date_and_time = Column(DateTime(timezone=True))
+    date = Column(Date, index=True)
+    date_and_time = Column(DateTime(timezone=True), index=True)
     police_attended = Column(Boolean)
 
     speed_limit = Column(SmallInteger, nullable=True)
@@ -41,6 +41,8 @@ class Accident(Base):
     special_conditions_id = Column(SmallInteger, ForeignKey('special_conditions.id'))
     carriageway_hazards_id = Column(SmallInteger, ForeignKey('carriageway_hazards.id'))
     urban_rural_id = Column(SmallInteger, ForeignKey('urban_rural.id'))
+
+    highway_authority_id = Column(String(9), index=True)
 
     solar_elevation = Column(Float, nullable=True)
     moon_phase = Column(SmallInteger, nullable=True)

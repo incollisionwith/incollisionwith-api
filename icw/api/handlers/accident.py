@@ -54,6 +54,9 @@ class AccidentListHandler(BaseHandler):
         if 'severity' in request.GET:
             query = query.filter(Accident.severity_id.in_(request.GET.getall('severity')))
 
+        if 'highwayAuthority' in request.GET:
+            query = query.filter(Accident.highway_authority_id.in_(request.GET.getall('highwayAuthority')))
+
         if 'involvedVehicleType' in request.GET:
             query = query.filter(Accident.vehicles.any(Vehicle.type_id.in_(request.GET.getall('involvedVehicleType'))))
 

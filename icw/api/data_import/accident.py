@@ -58,7 +58,8 @@ def get_accident_dict(timezone, astral, row):
         road_1_number=indexed(row, '1st_Road_Number'),
         road_2_number=indexed(row, '2nd_Road_Number'),
         speed_limit=indexed(row, 'Speed_limit'),
-        )
+        highway_authority_id=row['Local_Authority_(Highway)'] or None,
+    )
 
 if __name__ == '__main__':
     timezone = pytz.timezone('Europe/London')
