@@ -35,21 +35,20 @@ class AccidentListHandler(BaseHandler):
         if 'sort' in request.GET:
             query = query.order_by(*request.GET.getall('sort'))
 
-        if 'dateTimeLower' in request.GET:
+        if request.GET.get('dateTimeLower'):
             try:
                 datetime_lower = dateutil.parser.parse(request.GET['dateTimeLower'])
             except ValueError:
                 raise HTTPBadRequest
             else:
                 query = query.filter(Accident.date_and_time >= datetime_lower)
-        if 'dateTimeUpper' in request.GET:
+        if request.GET.get('dateTimeUpper'):
             try:
                 datetime_upper = dateutil.parser.parse(request.GET['dateTimeUpper'])
             except ValueError:
                 raise HTTPBadRequest
             else:
                 query = query.filter(Accident.date_and_time < datetime_upper)
-
 
         if 'severity' in request.GET:
             query = query.filter(Accident.severity_id.in_(request.GET.getall('severity')))
