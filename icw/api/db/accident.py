@@ -1,6 +1,7 @@
 from geoalchemy2 import Geometry
 import shapely.wkb
 from sqlalchemy import String, Column, ForeignKey, DateTime, Boolean, Float, Date, SmallInteger
+from sqlalchemy.dialects.postgresql import BIT
 from sqlalchemy.orm import relationship
 
 from . import Base
@@ -51,6 +52,9 @@ class Accident(Base):
     severity = relationship('CasualtySeverity')
     junction_detail = relationship('JunctionDetail')
     junction_control = relationship('JunctionControl')
+
+    involved_vehicle_types = Column(BIT(100))
+    involved_casualty_types = Column(BIT(100))
 
     vehicles = relationship('Vehicle', order_by='Vehicle.vehicle_ref', viewonly=True)
     casualties = relationship('Casualty', order_by='Casualty.casualty_ref', viewonly=True)

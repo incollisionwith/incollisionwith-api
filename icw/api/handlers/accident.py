@@ -6,6 +6,7 @@ from urllib.parse import urlencode
 from aiohttp.web_exceptions import HTTPNotFound, HTTPBadRequest
 from aiohttp_utils import Response
 import dateutil.parser
+from sqlalchemy.dialects.postgresql import BIT
 from sqlalchemy.orm import joinedload
 
 from ..db import Accident, Vehicle, Casualty
@@ -57,10 +58,14 @@ class AccidentListHandler(BaseHandler):
             query = query.filter(Accident.highway_authority_id.in_(request.GET.getall('highwayAuthority')))
 
         if 'involvedVehicleType' in request.GET:
-            query = query.filter(Accident.vehicles.any(Vehicle.type_id.in_(request.GET.getall('involvedVehicleType'))))
+            vehicle_types = set(map(int, request.GET.getall('involvedVehicleType')))
+            vehicle_types = '{:0100b}'.format(sum(1 << vt for vt in vehicle_types))
+            query = query.filter((Accident.involved_vehicle_types.op('&')(vehicle_types)) == vehicle_types)
 
         if 'involvedCasualtyType' in request.GET:
-            query = query.filter(Accident.casualties.any(Casualty.type_id.in_(request.GET.getall('involvedCasualtyType'))))
+            casualty_types = set(map(int, request.GET.getall('involvedCasualtyType')))
+            casualty_types = '{:0100b}'.format(sum(1 << ct for ct in casualty_types))
+            query = query.filter((Accident.involved_casualty_types.op('&')(casualty_types)) == casualty_types)
 
         if 'bbox' in request.GET:
             x1, y1, x2, y2 = map(float, request.GET['bbox'].split(','))
