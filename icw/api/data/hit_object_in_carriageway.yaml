@@ -2,23 +2,34 @@
   label: None
 - id: 1
   label: Previous accident
+  sentence_part: collided with a previous accident
 - id: 2
   label: Road works
+  sentence_part: collided with road works
 - id: 4
   label: Parked vehicle
+  sentence_part: collided with a parked vehicle
 - id: 5
   label: Bridge (roof)
+  sentence_part: collided with the roof of a bridge
 - id: 6
   label: Bridge (side)
+  sentence_part: collided with the side of a bridge
 - id: 7
   label: Bollard or refuge
+  sentence_part: collided with a bollard or refuge
 - id: 8
   label: Open door of vehicle
+  sentence_part: collided with an open vehicle door
 - id: 9
   label: Central island of roundabout
+  sentence_part: collided with the central island of a roundabout
 - id: 10
   label: Kerb
+  sentence_part: hit a kerb
 - id: 11
   label: Other object
+  sentence_part: collided with an object in the carriageway
 - id: 12
   label: Any animal (except ridden horse)
+  sentence_part: collided with an animal in the carriageway

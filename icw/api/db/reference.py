@@ -71,6 +71,8 @@ class HighwayAuthority(ReferenceTable):
 class HitObjectInCarriageway(ReferenceTable):
     __tablename__ = 'hit_object_in_carriageway'
 
+    sentence_part = Column(String)
+
 
 class HitObjectOffCarriageway(ReferenceTable):
     __tablename__ = 'hit_object_off_carriageway'
@@ -157,13 +159,15 @@ class VehicleManoeuvre(ReferenceTable):
 class VehicleType(ReferenceTable):
     __tablename__ = 'vehicle_type'
 
-    person_label = Column(String)
     font_awesome = Column(String, nullable=True)
+    class_driver = Column(String, nullable=True)
+    class_passenger = Column(String, nullable=True)
 
     def to_json(self, verbose=False):
         data = super().to_json()
         data.update({
-            'personLabel': self.person_label,
+            'driverLabel': self.class_driver or (self.label + ' driver'),
+            'passengerLabel': self.class_passenger or (self.label + ' passenger'),
             'fontAwesome': self.font_awesome,
         })
         return data
