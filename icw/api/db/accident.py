@@ -43,7 +43,7 @@ class Accident(Base):
     carriageway_hazards_id = Column(SmallInteger, ForeignKey('carriageway_hazards.id'))
     urban_rural_id = Column(SmallInteger, ForeignKey('urban_rural.id'))
 
-    highway_authority_id = Column(String(9), index=True)
+    highway_authority_id = Column(String(9), ForeignKey('highway_authority.id'), index=True)
 
     solar_elevation = Column(Float, nullable=True)
     moon_phase = Column(SmallInteger, nullable=True)
@@ -86,6 +86,7 @@ class Accident(Base):
             'solarElevation': self.solar_elevation,
             'moonPhase': self.moon_phase,
             'speedLimit': self.speed_limit,
+            'highwayAuthority': app['reference-data']['HighwayAuthority'].get(self.highway_authority_id),
             'specialConditions': app['reference-data']['SpecialConditions'].get(self.special_conditions_id),
             'carriagewayHazards': app['reference-data']['CarriagewayHazards'].get(self.carriageway_hazards_id),
             'junctionControl': app['reference-data']['JunctionControl'].get(self.junction_control_id),

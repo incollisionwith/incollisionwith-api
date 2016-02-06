@@ -3,8 +3,8 @@ from . import Base
 
 __all__ = ['ReferenceTable',
            'AgeBand', 'CarriagewayHazards', 'CasualtyClass', 'CasualtySeverity', 'CitationCertainty',
-           'FirstPointOfImpact', 'HitObjectInCarriageway', 'HitObjectOffCarriageway', 'JunctionControl',
-           'JunctionDetail', 'JunctionLocation', 'LightConditions', 'PedestrianCrossingHuman',
+           'FirstPointOfImpact', 'HighwayAuthority', 'HitObjectInCarriageway', 'HitObjectOffCarriageway',
+           'JunctionControl', 'JunctionDetail', 'JunctionLocation', 'LightConditions', 'PedestrianCrossingHuman',
            'PedestrianCrossingPhysical', 'PedestrianLocation', 'PedestrianMovement', 'RoadClass', 'RoadSurface',
            'RoadType', 'Sex', 'SkiddingAndOverturning', 'SpecialConditions', 'TowingAndArticulation', 'UrbanRural',
            'VehicleLeavingCarriageway', 'VehicleLocation', 'VehicleManoeuvre', 'VehicleType', 'Weather']
@@ -60,6 +60,12 @@ class CitationCertainty(ReferenceTable):
 
 class FirstPointOfImpact(ReferenceTable):
     __tablename__ = 'first_point_of_impact'
+
+
+class HighwayAuthority(ReferenceTable):
+    __tablename__ = 'highway_authority'
+
+    id = Column(String, primary_key=True)
 
 
 class HitObjectInCarriageway(ReferenceTable):

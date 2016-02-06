@@ -46,6 +46,8 @@ def get_app(with_reference_data=True):
                          handlers.CitationSubmissionHandler())
     app.router.add_route('*', '/statistics',
                          handlers.StatisticsHandler())
+    app.router.add_route('*', '/reference-data',
+                         handlers.ReferenceDataHandler())
 
     if with_reference_data:
         app['reference-data'] = get_reference_data(app)

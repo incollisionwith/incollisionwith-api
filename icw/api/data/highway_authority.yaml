@@ -1,0 +1,415 @@
+- id: S12000033
+  label: Aberdeen City
+- id: S12000034
+  label: Aberdeenshire
+- id: S12000041
+  label: Angus
+- id: S12000035
+  label: Argyll & Bute
+- id: E09000002
+  label: Barking and Dagenham
+- id: E09000003
+  label: Barnet
+- id: E08000016
+  label: Barnsley
+- id: E06000022
+  label: Bath and North East Somerset
+- id: E06000055
+  label: Bedford
+- id: E09000004
+  label: Bexley
+- id: E08000025
+  label: Birmingham
+- id: E06000008
+  label: Blackburn with Darwen
+- id: E06000009
+  label: Blackpool
+- id: W06000019
+  label: Blaenau Gwent
+- id: E08000001
+  label: Bolton
+- id: E06000028
+  label: Bournemouth
+- id: E06000036
+  label: Bracknell Forest
+- id: E08000032
+  label: Bradford
+- id: E09000005
+  label: Brent
+- id: W06000013
+  label: Bridgend
+- id: E06000043
+  label: Brighton and Hove
+- id: E06000023
+  label: Bristol, City of
+- id: E09000006
+  label: Bromley
+- id: E10000002
+  label: Buckinghamshire
+- id: E08000002
+  label: Bury
+- id: W06000018
+  label: Caerphilly
+- id: E08000033
+  label: Calderdale
+- id: E10000003
+  label: Cambridgeshire
+- id: E09000007
+  label: Camden
+- id: W06000015
+  label: Cardiff
+- id: W06000010
+  label: Carmarthenshire
+- id: E06000056
+  label: Central Bedfordshire
+- id: W06000008
+  label: Ceredigion
+- id: E06000049
+  label: Cheshire East
+- id: E06000050
+  label: Cheshire West and Chester
+- id: E09000001
+  label: City of London
+- id: S12000005
+  label: Clackmannanshire
+- id: W06000003
+  label: Conwy
+- id: E06000052
+  label: Cornwall
+- id: E06000047
+  label: County Durham
+- id: E08000026
+  label: Coventry
+- id: E09000008
+  label: Croydon
+- id: E10000006
+  label: Cumbria
+- id: E06000005
+  label: Darlington
+- id: W06000004
+  label: Denbighshire
+- id: E06000015
+  label: Derby
+- id: E10000007
+  label: Derbyshire
+- id: E10000008
+  label: Devon
+- id: E08000017
+  label: Doncaster
+- id: E10000009
+  label: Dorset
+- id: E08000027
+  label: Dudley
+- id: S12000006
+  label: Dumfries & Galloway
+- id: S12000042
+  label: Dundee City
+- id: E09000009
+  label: Ealing
+- id: S12000008
+  label: East Ayrshire
+- id: S12000009
+  label: East Dunbartonshire
+- id: S12000010
+  label: East Lothian
+- id: S12000011
+  label: East Renfrewshire
+- id: E06000011
+  label: East Riding of Yorkshire
+- id: E10000011
+  label: East Sussex
+- id: S12000036
+  label: Edinburgh, City of
+- id: E09000010
+  label: Enfield
+- id: E10000012
+  label: Essex
+- id: S12000014
+  label: Falkirk
+- id: S12000015
+  label: Fife
+- id: W06000005
+  label: Flintshire
+- id: E08000020
+  label: Gateshead
+- id: S12000043
+  label: Glasgow City
+- id: E10000013
+  label: Gloucestershire
+- id: E09000011
+  label: Greenwich
+- id: W06000002
+  label: Gwynedd
+- id: E09000012
+  label: Hackney
+- id: E06000006
+  label: Halton
+- id: E09000013
+  label: Hammersmith and Fulham
+- id: E10000014
+  label: Hampshire
+- id: E09000014
+  label: Haringey
+- id: E09000015
+  label: Harrow
+- id: E06000001
+  label: Hartlepool
+- id: E09000016
+  label: Havering
+- id: E06000019
+  label: Herefordshire, County of 
+- id: E10000015
+  label: Hertfordshire
+- id: S12000017
+  label: Highland
+- id: E09000017
+  label: Hillingdon
+- id: E09000018
+  label: Hounslow
+- id: S12000018
+  label: Inverclyde
+- id: W06000001
+  label: Isle of Anglesey
+- id: E06000046
+  label: Isle of Wight
+- id: E06000053
+  label: Isles of Scilly
+- id: E09000019
+  label: Islington
+- id: E09000020
+  label: Kensington and Chelsea
+- id: E10000016
+  label: Kent
+- id: E06000010
+  label: Kingston upon Hull, City of
+- id: E09000021
+  label: Kingston upon Thames
+- id: E08000034
+  label: Kirklees
+- id: E08000011
+  label: Knowsley
+- id: E09000022
+  label: Lambeth
+- id: E10000017
+  label: Lancashire
+- id: E08000035
+  label: Leeds
+- id: E06000016
+  label: Leicester
+- id: E10000018
+  label: Leicestershire
+- id: E09000023
+  label: Lewisham
+- id: E10000019
+  label: Lincolnshire
+- id: E08000012
+  label: Liverpool
+- id: EHEATHROW
+  label: London Airport (Heathrow)
+- id: E06000032
+  label: Luton
+- id: E08000003
+  label: Manchester
+- id: E06000035
+  label: Medway
+- id: W06000024
+  label: Merthyr Tydfil
+- id: E09000024
+  label: Merton
+- id: E06000002
+  label: Middlesbrough
+- id: S12000019
+  label: Midlothian
+- id: E06000042
+  label: Milton Keynes
+- id: W06000021
+  label: Monmouthshire
+- id: S12000020
+  label: Moray
+- id: S12000013
+  label: Na h-Eileanan an Iar (Western Isles)
+- id: W06000012
+  label: Neath Port Talbot
+- id: E08000021
+  label: Newcastle upon Tyne
+- id: E09000025
+  label: Newham
+- id: W06000022
+  label: Newport
+- id: E10000020
+  label: Norfolk
+- id: S12000021
+  label: North Ayrshire
+- id: E06000012
+  label: North East Lincolnshire
+- id: S12000044
+  label: North Lanarkshire
+- id: E06000013
+  label: North Lincolnshire
+- id: E06000024
+  label: North Somerset
+- id: E08000022
+  label: North Tyneside
+- id: E10000023
+  label: North Yorkshire
+- id: E10000021
+  label: Northamptonshire
+- id: E06000048
+  label: Northumberland
+- id: E06000018
+  label: Nottingham
+- id: E10000024
+  label: Nottinghamshire
+- id: E08000004
+  label: Oldham
+- id: S12000023
+  label: Orkney Islands
+- id: E10000025
+  label: Oxfordshire
+- id: W06000009
+  label: Pembrokeshire
+- id: S12000024
+  label: Perth and Kinross
+- id: E06000031
+  label: Peterborough
+- id: E06000026
+  label: Plymouth
+- id: E06000029
+  label: Poole
+- id: E06000044
+  label: Portsmouth
+- id: W06000023
+  label: Powys
+- id: E06000038
+  label: Reading
+- id: E09000026
+  label: Redbridge
+- id: E06000003
+  label: Redcar and Cleveland
+- id: S12000038
+  label: Renfrewshire
+- id: W06000016
+  label: Rhondda, Cynon, Taff
+- id: E09000027
+  label: Richmond upon Thames
+- id: E08000005
+  label: Rochdale
+- id: E08000018
+  label: Rotherham
+- id: E06000017
+  label: Rutland
+- id: E08000006
+  label: Salford
+- id: E08000028
+  label: Sandwell
+- id: S12000026
+  label: Scottish Borders
+- id: E08000014
+  label: Sefton
+- id: E08000019
+  label: Sheffield
+- id: S12000027
+  label: Shetland Islands
+- id: E06000051
+  label: Shropshire
+- id: E06000039
+  label: Slough
+- id: E08000029
+  label: Solihull
+- id: E10000027
+  label: Somerset
+- id: S12000028
+  label: South Ayrshire
+- id: E06000025
+  label: South Gloucestershire
+- id: S12000029
+  label: South Lanarkshire
+- id: E08000023
+  label: South Tyneside
+- id: E06000045
+  label: Southampton 
+- id: E06000033
+  label: Southend-on-Sea
+- id: E09000028
+  label: Southwark
+- id: E08000013
+  label: St. Helens
+- id: E10000028
+  label: Staffordshire
+- id: S12000030
+  label: Stirling
+- id: E08000007
+  label: Stockport
+- id: E06000004
+  label: Stockton-on-Tees
+- id: E06000021
+  label: Stoke-on-Trent
+- id: E10000029
+  label: Suffolk
+- id: E08000024
+  label: Sunderland
+- id: E10000030
+  label: Surrey
+- id: E09000029
+  label: Sutton
+- id: W06000011
+  label: Swansea
+- id: E06000030
+  label: Swindon
+- id: E08000008
+  label: Tameside
+- id: E06000020
+  label: Telford and Wrekin
+- id: W06000014
+  label: The Vale of Glamorgan
+- id: E06000034
+  label: Thurrock
+- id: E06000027
+  label: Torbay
+- id: W06000020
+  label: Torfaen
+- id: E09000030
+  label: Tower Hamlets
+- id: E08000009
+  label: Trafford
+- id: E08000036
+  label: Wakefield
+- id: E08000030
+  label: Walsall
+- id: E09000031
+  label: Waltham Forest
+- id: E09000032
+  label: Wandsworth
+- id: E06000007
+  label: Warrington
+- id: E10000031
+  label: Warwickshire
+- id: E06000037
+  label: West Berkshire
+- id: S12000039
+  label: West Dunbartonshire
+- id: S12000040
+  label: West Lothian
+- id: E10000032
+  label: West Sussex
+- id: E09000033
+  label: Westminster
+- id: E08000010
+  label: Wigan
+- id: E06000054
+  label: Wiltshire
+- id: E06000040
+  label: Windsor and Maidenhead
+- id: E08000015
+  label: Wirral
+- id: E06000041
+  label: Wokingham
+- id: E08000031
+  label: Wolverhampton
+- id: E10000034
+  label: Worcestershire
+- id: W06000006
+  label: Wrexham
+- id: E06000014
+  label: York
+
