@@ -31,7 +31,7 @@ def get_accident_dict(timezone, astral, row):
     moon_phase = astral.moon_phase(date)
 
     return dict(
-        id=row['\ufeffAccident_Index'],
+        id=row.get('Accident_Index') or row['\ufeffAccident_Index'],
         location=location,
         police_force_id=row['Police_Force'],
         severity_id=row['Accident_Severity'],

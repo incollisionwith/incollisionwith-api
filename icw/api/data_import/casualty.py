@@ -16,7 +16,7 @@ def load_accident(app, f):
 
     casualties = []
     for i, row in enumerate(reader):
-        casualty = {'accident_id': row['\ufeffAccident_Index'],
+        casualty = {'accident_id': row.get('Accident_Index') or row['\ufeffAccident_Index'],
                     'vehicle_ref': row['Vehicle_Reference'],
                     'casualty_ref': row['Casualty_Reference'],
                     'class_id': indexed(row, 'Casualty_Class'),
@@ -38,7 +38,7 @@ def load_accident(app, f):
 
 if __name__ == '__main__':
     import sys
-    from icw.app import get_app
+    from icw.api.app import get_app
     app = get_app()
 
     with open(sys.argv[1]) as f:

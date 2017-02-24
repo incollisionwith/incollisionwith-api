@@ -12,7 +12,7 @@ def sex_indexed(row, name):
 
 def row_parser(row):
     return {
-        'accident_id': row['\ufeffAccident_Index'],
+        'accident_id': row.get('Accident_Index') or row['\ufeffAccident_Index'],
         'vehicle_ref': int(row['Vehicle_Reference']),
         'type_id': indexed(row, 'Vehicle_Type'),
         'driver_sex_id': sex_indexed(row, 'Sex_of_Driver'),
