@@ -54,11 +54,11 @@ class AccidentListHandler(BaseHandler):
         if 'severity' in request.GET:
             query = query.filter(Accident.severity_id.in_(request.GET.getall('severity')))
 
-        highway_authorities = list(filter(None, request.GET.getall('highwayAuthority')))
+        highway_authorities = list(filter(None, request.GET.getall('highwayAuthority', ())))
         if highway_authorities:
             query = query.filter(Accident.highway_authority_id.in_(highway_authorities))
 
-        police_forces = list(filter(None, request.GET.getall('policeForce')))
+        police_forces = list(filter(None, request.GET.getall('policeForce', ())))
         if police_forces:
             query = query.filter(Accident.police_force_id.in_(police_forces))
 
