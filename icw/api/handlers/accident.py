@@ -58,6 +58,13 @@ class AccidentListHandler(BaseHandler):
         if highway_authorities:
             query = query.filter(Accident.highway_authority_id.in_(highway_authorities))
 
+        police_forces = list(filter(None, request.GET.getall('policeForce')))
+        if police_forces:
+            query = query.filter(Accident.police_force_id.in_(police_forces))
+
+        if 'policeAttended' in request.GET:
+            query = query.filter(Accident.police_attended == (request.GET.get('policeAttended') == 'yes'))
+
         if 'involvedVehicleType' in request.GET:
             vehicle_types = set(map(int, request.GET.getall('involvedVehicleType')))
             vehicle_types = '{:0100b}'.format(sum(1 << vt for vt in vehicle_types))
